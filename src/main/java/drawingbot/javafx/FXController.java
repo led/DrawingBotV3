@@ -60,6 +60,7 @@ import org.controlsfx.glyphfont.Glyph;
 
 import java.awt.image.BufferedImageOp;
 import java.io.File;
+import java.text.DecimalFormat;
 import java.util.*;
 import java.util.logging.Level;
 
@@ -647,14 +648,14 @@ public class FXController {
 
     public CheckBox checkBoxOptimiseForPrint = null;
     public TextField textFieldPenWidth = null;
-    
+
     public ColorPicker colorPickerCanvas = null;
 
     public void initDrawingAreaPane(){
 
         colorPickerCanvas.setValue(Color.WHITE);
         colorPickerCanvas.valueProperty().bindBidirectional(DrawingBotV3.INSTANCE.canvasColor);
-        
+
         comboBoxDrawingAreaPreset.setItems(Register.PRESET_LOADER_DRAWING_AREA.presets);
         comboBoxDrawingAreaPreset.setValue(Register.PRESET_LOADER_DRAWING_AREA.getDefaultPreset());
         comboBoxDrawingAreaPreset.valueProperty().addListener((observable, oldValue, newValue) -> {
@@ -682,11 +683,12 @@ public class FXController {
         choiceBoxDrawingUnits.setValue(UnitsLength.MILLIMETRES);
         choiceBoxDrawingUnits.valueProperty().bindBidirectional(DrawingBotV3.INSTANCE.drawingArea.inputUnits);
 
+        String drawingWidthHeightDecimalFormat = "####.###";
         textFieldDrawingWidth.textFormatterProperty().setValue(new TextFormatter<>(new FloatStringConverter(), 0F));
-        textFieldDrawingWidth.textProperty().bindBidirectional(DrawingBotV3.INSTANCE.drawingArea.drawingAreaWidth, new NumberStringConverter());
+        textFieldDrawingWidth.textProperty().bindBidirectional(DrawingBotV3.INSTANCE.drawingArea.drawingAreaWidth, new NumberStringConverter(new DecimalFormat(drawingWidthHeightDecimalFormat)));
 
         textFieldDrawingHeight.textFormatterProperty().setValue(new TextFormatter<>(new FloatStringConverter(), 0F));
-        textFieldDrawingHeight.textProperty().bindBidirectional(DrawingBotV3.INSTANCE.drawingArea.drawingAreaHeight, new NumberStringConverter());
+        textFieldDrawingHeight.textProperty().bindBidirectional(DrawingBotV3.INSTANCE.drawingArea.drawingAreaHeight, new NumberStringConverter(new DecimalFormat(drawingWidthHeightDecimalFormat)));
 
         buttonRotate.setOnAction(e -> {
             String width = textFieldDrawingWidth.getText();
@@ -1461,8 +1463,5 @@ public class FXController {
         public void initialize(){
             ///NOP
         }
-
     }
-
-
 }
