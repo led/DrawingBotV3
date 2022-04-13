@@ -284,11 +284,11 @@ public class FXDrawingSets {
         buttonDuplicatePen.setTooltip(new Tooltip("Duplicate Selected Pen"));
         buttonDuplicatePen.disableProperty().bind(penTableView.getSelectionModel().selectedItemProperty().isNull());
 
-        buttonMoveUpPen.setOnAction(e -> FXHelper.moveItemUp(penTableView.getSelectionModel().getSelectedItem(), drawingSets.get().activeDrawingSet.get().pens));
+        buttonMoveUpPen.setOnAction(e -> FXHelper.moveItemUp(penTableView.getSelectionModel(), drawingSets.get().activeDrawingSet.get().pens));
         buttonMoveUpPen.setTooltip(new Tooltip("Move Selected Pen Up"));
         buttonMoveUpPen.disableProperty().bind(penTableView.getSelectionModel().selectedItemProperty().isNull());
 
-        buttonMoveDownPen.setOnAction(e -> FXHelper.moveItemDown(penTableView.getSelectionModel().getSelectedItem(), drawingSets.get().activeDrawingSet.get().pens));
+        buttonMoveDownPen.setOnAction(e -> FXHelper.moveItemDown(penTableView.getSelectionModel(), drawingSets.get().activeDrawingSet.get().pens));
         buttonMoveDownPen.setTooltip(new Tooltip("Move Selected Pen Down"));
         buttonMoveDownPen.disableProperty().bind(penTableView.getSelectionModel().selectedItemProperty().isNull());
 
@@ -377,11 +377,11 @@ public class FXDrawingSets {
         buttonDuplicateDrawingSetSlot.setTooltip(new Tooltip("Duplicate selected Drawing Set"));
         buttonDuplicateDrawingSetSlot.disableProperty().bind(drawingSetTableView.getSelectionModel().selectedItemProperty().isNull());
 
-        buttonMoveUpDrawingSetSlot.setOnAction(e -> FXHelper.moveItemUp(drawingSetTableView.getSelectionModel().getSelectedItem(), drawingSets.get().drawingSetSlots.get()));
+        buttonMoveUpDrawingSetSlot.setOnAction(e -> FXHelper.moveItemUp(drawingSetTableView.getSelectionModel(), drawingSets.get().drawingSetSlots.get()));
         buttonMoveUpDrawingSetSlot.setTooltip(new Tooltip("Move selected Drawing Set up"));
         buttonMoveUpDrawingSetSlot.disableProperty().bind(drawingSetTableView.getSelectionModel().selectedItemProperty().isNull());
 
-        buttonMoveDownDrawingSetSlot.setOnAction(e -> FXHelper.moveItemDown(drawingSetTableView.getSelectionModel().getSelectedItem(), drawingSets.get().drawingSetSlots.get()));
+        buttonMoveDownDrawingSetSlot.setOnAction(e -> FXHelper.moveItemDown(drawingSetTableView.getSelectionModel(), drawingSets.get().drawingSetSlots.get()));
         buttonMoveDownDrawingSetSlot.setTooltip(new Tooltip("Move selected Drawing Set down"));
         buttonMoveDownDrawingSetSlot.disableProperty().bind(drawingSetTableView.getSelectionModel().selectedItemProperty().isNull());
 

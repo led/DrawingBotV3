@@ -348,21 +348,25 @@ public class FXHelper {
         menu.getItems().add(menuDuplicate);
     }
 
-    public static <O> void moveItemUp(O item, ObservableList<O> list){
+    public static <O> void moveItemUp(TableView.TableViewSelectionModel<O> model, ObservableList<O> list){
+        O item = model.getSelectedItem();
         if(item == null) return;
         int index = list.indexOf(item);
-        if(index != 0){
+        if(index > 0){
             list.remove(index);
             list.add(index-1,item);
+            model.select(index-1);
         }
     }
 
-    public static <O> void moveItemDown(O item, ObservableList<O> list){
+    public static <O> void moveItemDown(TableView.TableViewSelectionModel<O> model, ObservableList<O> list){
+        O item = model.getSelectedItem();
         if(item == null) return;
         int index = list.indexOf(item);
         if(index != list.size()-1){
             list.remove(index);
             list.add(index+1, item);
+            model.select(index+1);
         }
     }
 

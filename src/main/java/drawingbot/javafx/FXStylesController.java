@@ -177,9 +177,8 @@ public class FXStylesController {
                 editingStyles.add(new ObservableDrawingStyle(DrawingBotV3.INSTANCE.drawingSets, style));
             }
         });
-        buttonMoveUpStyle.setOnAction(e -> FXHelper.moveItemUp(stylesTableView.getSelectionModel().getSelectedItem(), editingStyles));
-        buttonMoveDownStyle.setOnAction(e -> FXHelper.moveItemDown(stylesTableView.getSelectionModel().getSelectedItem(), editingStyles));
-        buttonMoveDownStyle.setOnAction(e -> FXHelper.moveItemDown(stylesTableView.getSelectionModel().getSelectedItem(), editingStyles));
+        buttonMoveUpStyle.setOnAction(e -> FXHelper.moveItemUp(stylesTableView.getSelectionModel(), editingStyles));
+        buttonMoveDownStyle.setOnAction(e -> FXHelper.moveItemDown(stylesTableView.getSelectionModel(), editingStyles));
 
     }
 

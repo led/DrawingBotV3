@@ -71,8 +71,8 @@ public class FXVersionControl {
 
         buttonAddVersion.setOnAction(e -> saveVersion());
         buttonDeleteVersion.setOnAction(e -> FXHelper.deleteItem(tableViewVersions.getSelectionModel().getSelectedItem(), projectVersions.get()));
-        buttonMoveUpVersion.setOnAction(e -> FXHelper.moveItemUp(tableViewVersions.getSelectionModel().getSelectedItem(), projectVersions.get()));
-        buttonMoveDownVersion.setOnAction(e -> FXHelper.moveItemDown(tableViewVersions.getSelectionModel().getSelectedItem(), projectVersions.get()));
+        buttonMoveUpVersion.setOnAction(e -> FXHelper.moveItemUp(tableViewVersions.getSelectionModel(), projectVersions.get()));
+        buttonMoveDownVersion.setOnAction(e -> FXHelper.moveItemDown(tableViewVersions.getSelectionModel(), projectVersions.get()));
     }
 
     public void saveVersion(){
