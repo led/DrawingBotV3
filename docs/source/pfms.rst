@@ -282,7 +282,7 @@ You can view the Lightened Image in your viewport by going to "Display / Lighten
 
         Controls the maximum intensity of the __`Erasing` process, with :term:`Erase Min` defining the minimum.
 
-        The Erase Min/Max alter the amount of brighten each RGB channel by in the Lightened Image.
+        The Erase Min/Max alters the amount to brighten each RGB channel in the Lightened Image.
 
         It therefore controls the overall plot density & contrast in the image and can be fine-tuned to your specific pens.
 
@@ -293,7 +293,7 @@ You can view the Lightened Image in your viewport by going to "Display / Lighten
 
         *e.g. Fig 1. Erase Min = 50 & Erase Max = 50, Fig 2. Erase Min = 50 & Erase Max = 125 (Default), Fig 3. Erase Min = 50 & Erase Max = 255*
 
-        **Quick Tip:** Are you Physical Plots coming out too dense and soaking the paper?
+        **Quick Tip:** Are your Physical Plots coming out too dense and soaking the paper?
 
         Try increasing the Erase Min/Max to reduce the amount of overlap.
 
@@ -462,7 +462,7 @@ Curves (Quad Beziers)
 
         ``Values: Number (Range: 1 -> 45)``
 
-        the number of positions to test for each control point to find the darkest curve, increasing this will result in a more accurate plot.
+        the number of positions to test for each control point to find the darkest curve. Increasing this will result in a more accurate plot.
 
     Curve Variation
 
@@ -489,7 +489,7 @@ Curves (Quad Beziers)
 
 Sketch Cubic Beziers
 ======================
-Transforms an image into `Cubic Bézier curves <https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Cubic_B%C3%A9zier_curves>`_ using brightness data, by first finding the darkest line and then finding the darkest position for the two control points. It uses more accurate "Bresenham" calculations which results in longer processing times but increased precision.
+Transforms an image into `Cubic Bézier curves <https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Cubic_B%C3%A9zier_curves>`_ using brightness data, by first finding the darkest line and then finding the darkest position for the two control points. It uses the more accurate "Bresenham" calculations which result in increased precision but longer processing time.
 
 .. image:: images/pfms/sketch_cubicbeziers_1.jpg
     :width: 300pt
@@ -505,7 +505,7 @@ Settings
 
 Sketch Catmull-Roms
 ======================
-Transforms an image into `catmull-rom splines <https://en.wikipedia.org/wiki/Centripetal_Catmull%E2%80%93Rom_spline>`_ using brightness data, by finding the next darkest curve from each point. It uses more accurate "Bresenham" calculations which results in longer processing times but increased precision.
+Transforms an image into `catmull-rom splines <https://en.wikipedia.org/wiki/Centripetal_Catmull%E2%80%93Rom_spline>`_ using brightness data, by finding the next darkest curve from each point. It uses the more accurate "Bresenham" calculations which result in increased precision but longer processing time.
 
 
 .. image:: images/pfms/sketch_catmullroms_1.jpg
@@ -1875,7 +1875,7 @@ Grid
 
     Controls the shape of the generated Shapes, a value of 1.0 will occupy all the available space in the grid.
 
-    Values higher than 1.0 will use more than the available space and cause shapes too overlap.
+    Values higher than 1.0 will use more than the available space and cause shapes to overlap.
 
     Values lower than 1.0 will use less than the available space.
 
@@ -1883,7 +1883,7 @@ Grid
 
     ``Values: Number (Safe Range: 0.0 -> 64.0)``
 
-    Introduces a random X/Y offset too each grid position, introducing some natural noise to the grid.
+    Introduces a random X/Y offset to each grid position, introducing some natural noise to the grid.
 
     With values higher than 0, the grid positions will no longer be uniform.
 
@@ -1905,13 +1905,13 @@ Grid Style
 
     ``Values: Number (Safe Range: 0.0 -> 2.0)``
 
-    Controls the brightness applied as a pre-processing step too the source image, see :term:`Brightness (Adaptive PFMs)`
+    Controls the brightness applied as a pre-processing step to the source image, see :term:`Brightness (Adaptive PFMs)`
 
  Contrast (Grid PFMs)
 
     ``Values: Number (Safe Range: 0.0 -> 2.0)``
 
-    Controls the contrast applied as a pre-processing step too the source image.
+    Controls the contrast applied as a pre-processing step to the source image.
 
     The quality of Drawings from Grid PFMs can vary massively on the contrast and brightness so these controls are included for simplicity though they behave the same as adding a contrast filter in the Pre-Processing tab.
 
